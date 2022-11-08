@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:ready_to_use_widgets/core/init/constants/color_constant.dart';
+import 'package:ready_to_use_widgets/core/init/extensions/context_extension.dart';
 import 'package:ready_to_use_widgets/core/init/theme/base/base_theme.dart';
 
 class LightTheme extends BaseTheme {
@@ -41,10 +42,27 @@ class LightTheme extends BaseTheme {
         fontWeight: FontWeight.bold,
         color: ColorConstants.steelGray,
       );
-      @override
+  @override
   TextStyle get infoMessagePanelTextStyle => GoogleFonts.ubuntu(
         fontSize: 14,
         fontWeight: FontWeight.w500,
         color: ColorConstants.scarpaFlow,
       );
+
+  @override
+  double deviceScreenScale(
+      {required double scaleFactor, required BuildContext context}) {
+    return context.dynamicWidth(scaleFactor);
+  }
+
+  @override
+  double textScaleFactorFromFontSize(
+      {required double fontSize, required BuildContext context}) {
+    switch (fontSize.toInt()) {
+      default:
+        {
+          return 0.0022;
+        }
+    }
+  }
 }

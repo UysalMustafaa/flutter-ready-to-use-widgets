@@ -6,4 +6,8 @@ abstract class BaseTheme {
   TextStyle get wideExpansionPanelTextStyle;
   TextStyle get textFieldHeaderTextStyle;
   TextStyle get infoMessagePanelTextStyle;
+  double deviceScreenScale(
+      {required double scaleFactor, required BuildContext context});
+  double textScaleFactorFromFontSize(
+      {required double fontSize, required BuildContext context});
 }

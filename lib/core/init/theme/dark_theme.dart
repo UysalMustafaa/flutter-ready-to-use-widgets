@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ready_to_use_widgets/core/init/extensions/context_extension.dart';
 import 'package:ready_to_use_widgets/core/init/theme/base/base_theme.dart';
 
 class DarkTheme extends BaseTheme {
@@ -26,4 +27,20 @@ class DarkTheme extends BaseTheme {
 
   @override
   TextStyle get infoMessagePanelTextStyle => throw UnimplementedError();
+  
+
+
+ @override
+  double deviceScreenScale(
+      {required double scaleFactor, required BuildContext context}) {
+    return context.dynamicWidth(scaleFactor);
+  }
+
+  @override
+  double textScaleFactorFromFontSize(
+      {required double fontSize, required BuildContext context}) {
+    throw UnimplementedError();
+  }
+  
+
 }
